@@ -1,4 +1,6 @@
 const yargs = require('yargs');
+// import yargs from 'yargs';
+const { addcontacts } = require('./contacts');
 
 yargs.command({
     command: "create",
@@ -25,7 +27,7 @@ yargs.command({
         }
     },
     handler({ fullname, phone, email }) {
-        console.log(fullname, phone, email);
+        addcontacts(fullname, phone, email);
     }
 })
 
