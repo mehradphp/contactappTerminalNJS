@@ -4,7 +4,7 @@ const yargs = require('yargs');
 // import yargs from 'yargs';
 const { addcontacts, listContacts, removeContacts } = require('./contacts');
 yargs.scriptName('Contact Manager');
-yargs.usage(`$0 ${"<command>"} ${("[args]")}`)
+yargs.usage(`$0 ${"<command>"} ${("[args]")}`);
 
 yargs.command({
     command: "create",
