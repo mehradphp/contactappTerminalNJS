@@ -8,5 +8,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.13"
+  },
+  "dependencies": {
+    "yargs": "^17.3.0",
+    "yargs-parser": "^21.0.0"
+  }
 }

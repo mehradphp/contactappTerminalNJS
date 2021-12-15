@@ -1,9 +1,32 @@
-const fs = require('fs');
+const yargs = require('yargs');
 
-const person = [
-    { id: 1, fullname: "mehrdad khodaverdi" },
-    { id: 2, fullname: "ali khodav" },
-    { id: 3, fullname: "da muuler" },
-];
+yargs.command({
+    command: "create",
+    aliases: ["c"],
+    describe: "[create new contact]",
+    builder: {
+        fullname: {
+            alias: "f",
+            describe: "person fullname",
+            demandOption: true,
+            type: "string",
+        },
+        phone: {
+            alias: "p",
+            describe: "person phone nummber",
+            demandOption: true,
+            type: "string",
+        },
+        email: {
+            alias: "e",
+            describe: "person email address",
+            demandOption: true,
+            type: "string",
+        }
+    },
+    handler({ fullname, phone, email }) {
+        console.log(fullname, phone, email);
+    }
+})
 
-fs.writeFileSync('contacts.json', JSON.stringify(person));
+console.log(yargs.argv);
